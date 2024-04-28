@@ -14,6 +14,7 @@ jobs:
     strategy:
       matrix:
         pgsql-version: [12, 13, 14, 15, 16]
+        minio-version: [2021.3.17, 2024.4.18]
     services:
       pgsql:
         image: postgres:${{ matrix.pgsql-version }}
@@ -30,7 +31,7 @@ jobs:
       minio:
         # as github actions doesn't support "entrypoint", we need to use a non-official image
         # that has a custom entrypoint set to "minio server /data"
-        image: bitnami/minio:2023.8.31
+        image: bitnami/minio:${{ matrix.minio-version }}
         env:
           MINIO_ROOT_USER: 123456
           MINIO_ROOT_PASSWORD: 12345678
@@ -93,6 +94,7 @@ jobs:
       matrix:
         elasticsearch-version: [7.5.0, 8.0.0]
         meilisearch-version: [1.2.0, 1.7.0]
+        minio-version: [2021.3.17, 2024.4.18]
     services:
       elasticsearch:
         image: elasticsearch:${{ matrix.elasticsearch-version }}
@@ -116,7 +118,7 @@ jobs:
         ports:
           - 6379:6379
       minio:
-        image: bitnami/minio:2021.3.17
+        image: bitnami/minio:${{ matrix.minio-version }}
         env:
           MINIO_ACCESS_KEY: 123456
           MINIO_SECRET_KEY: 12345678
@@ -154,6 +156,7 @@ jobs:
     strategy:
       matrix:
         mysql-version: [8.0, 8.2]
+        elasticsearch-version: [7.5.0, 8.0.0]
     services:
       mysql:
         image: mysql:${{ matrix.mysql-version }}
@@ -163,7 +166,7 @@ jobs:
         ports:
           - "3306:3306"
       elasticsearch:
-        image: elasticsearch:7.5.0
+        image: elasticsearch:${{ matrix.elasticsearch-version }}
         env:
           discovery.type: single-node
         ports:
