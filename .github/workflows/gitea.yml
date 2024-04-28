@@ -30,7 +30,7 @@ jobs:
       minio:
         # as github actions doesn't support "entrypoint", we need to use a non-official image
         # that has a custom entrypoint set to "minio server /data"
-        image: bitnami/minio:2023.8.31
+        image: bitnami/minio:2024.4.18@sha256:788da5d4ace9c168a863886d36c0b58782e6b5ef4a06d833d1babe8dc5a979fa
         env:
           MINIO_ROOT_USER: 123456
           MINIO_ROOT_PASSWORD: 12345678
@@ -116,7 +116,7 @@ jobs:
         ports:
           - 6379:6379
       minio:
-        image: bitnami/minio:2021.3.17
+        image: bitnami/minio:2024.4.18@sha256:788da5d4ace9c168a863886d36c0b58782e6b5ef4a06d833d1babe8dc5a979fa
         env:
           MINIO_ACCESS_KEY: 123456
           MINIO_SECRET_KEY: 12345678
