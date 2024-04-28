@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       pgsql:
-        image: postgres:12
+        image: postgres:12.18@sha256:2f9b5fb13116e21ff6b0a0dd89b0a072e3960f71210168f58bc4c1752d7e418b
         env:
           POSTGRES_DB: test
           POSTGRES_PASSWORD: postgres
