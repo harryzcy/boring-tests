@@ -116,7 +116,7 @@ jobs:
         ports:
           - 6379:6379
       minio:
-        image: bitnami/minio:2021.3.17
+        image: bitnami/minio:2021.12.29@sha256:91a716dccc9f33cbf00add7b9df7f54b44b1946fee62630033ff15be96dfd177
         env:
           MINIO_ACCESS_KEY: 123456
           MINIO_SECRET_KEY: 12345678
