@@ -1,4 +1,4 @@
-name: Gitea Database Tests
+name: Gitea
 
 on:
   schedule:
