@@ -1,0 +1,21 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  super-linter:
+    uses: harryzcy/github-actions/.github/workflows/linter.yml@main
+
+  spelling:
+    uses: harryzcy/github-actions/.github/workflows/spelling.yml@main
