@@ -103,6 +103,7 @@ jobs:
         image: elasticsearch:${{ matrix.elasticsearch-version }}
         env:
           discovery.type: single-node
+          xpack.security.enabled: "false" # enabled by default in 8.x
         ports:
           - "9200:9200"
       meilisearch:
