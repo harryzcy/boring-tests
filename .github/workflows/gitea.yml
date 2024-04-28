@@ -11,9 +11,12 @@ permissions:
 jobs:
   test-pgsql:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pgsql-version: [12, 13, 14, 15, 16]
     services:
       pgsql:
-        image: postgres:12
+        image: postgres:${{ matrix.pgsql-version }}
         env:
           POSTGRES_DB: test
           POSTGRES_PASSWORD: postgres
@@ -86,15 +89,19 @@ jobs:
 
   test-unit:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        elasticsearch-version: [7.5.0, 8.0.0]
+        meilisearch-version: [1.2.0, 1.7.0]
     services:
       elasticsearch:
-        image: elasticsearch:7.5.0
+        image: elasticsearch:${{ matrix.elasticsearch-version }}
         env:
           discovery.type: single-node
         ports:
           - "9200:9200"
       meilisearch:
-        image: getmeili/meilisearch:v1.2.0
+        image: getmeili/meilisearch:v${{ matrix.meilisearch-version }}
         env:
           MEILI_ENV: development # disable auth
         ports:
@@ -144,9 +151,12 @@ jobs:
 
   test-mysql:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mysql-version: [8.0, 8.2]
     services:
       mysql:
-        image: mysql:8.0
+        image: mysql:${{ matrix.mysql-version }}
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_DATABASE: testgitea
@@ -191,9 +201,12 @@ jobs:
 
   test-mssql:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mssql-version: [2017, 2022]
     services:
       mssql:
-        image: mcr.microsoft.com/mssql/server:2017-latest
+        image: mcr.microsoft.com/mssql/server:${{ matrix.mssql-version }}-latest
         env:
           ACCEPT_EULA: Y
           MSSQL_PID: Standard
