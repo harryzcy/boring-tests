@@ -25,7 +25,7 @@ jobs:
         ports:
           - "5432:5432"
       ldap:
-        image: gitea/test-openldap:latest
+        image: gitea/test-openldap:latest@sha256:b66527e298d6062d5289dc411d1b8da1c593f8140a3d1f863e8d9d021234122f
         ports:
           - "389:389"
           - "636:636"
@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           repository: go-gitea/gitea
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5
         with:
           go-version-file: go.mod
           check-latest: true
@@ -70,7 +70,7 @@ jobs:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           repository: go-gitea/gitea
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5
         with:
           go-version-file: go.mod
           check-latest: true
@@ -131,7 +131,7 @@ jobs:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           repository: go-gitea/gitea
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5
         with:
           go-version-file: go.mod
           check-latest: true
@@ -176,7 +176,7 @@ jobs:
         ports:
           - "9200:9200"
       smtpimap:
-        image: tabascoterrier/docker-imap-devel:latest
+        image: tabascoterrier/docker-imap-devel:latest@sha256:bf744c42aeab47e8d1dda077780cd901ad92df59c898b6856137869298534541
         ports:
           - "25:25"
           - "143:143"
@@ -186,7 +186,7 @@ jobs:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           repository: go-gitea/gitea
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5
         with:
           go-version-file: go.mod
           check-latest: true
@@ -225,7 +225,7 @@ jobs:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           repository: go-gitea/gitea
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5
         with:
           go-version-file: go.mod
           check-latest: true
