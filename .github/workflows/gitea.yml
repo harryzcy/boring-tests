@@ -123,8 +123,10 @@ jobs:
       minio:
         image: bitnami/minio:${{ matrix.minio-version }}
         env:
-          MINIO_ACCESS_KEY: 123456
-          MINIO_SECRET_KEY: 12345678
+          MINIO_ACCESS_KEY: 123456 # deprecated since RELEASE.2021-04-22T15-44-28Z
+          MINIO_SECRET_KEY: 12345678 # deprecated since RELEASE.2021-04-22T15-44-28Z
+          MINIO_ROOT_USER: 123456
+          MINIO_ROOT_PASSWORD: 12345678
         ports:
           - "9000:9000"
     steps:
