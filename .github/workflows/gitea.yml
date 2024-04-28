@@ -95,7 +95,7 @@ jobs:
       fail-fast: false
       matrix:
         elasticsearch-version: [7.5.0, 8.13.2, latest]
-        meilisearch-version: [1.7.6, latest]
+        meilisearch-version: [v1.7.6, latest]
         minio-version: [2021.3.17, 2024.4.18, latest]
         redis-version: [7.2.4, latest]
     services:
@@ -106,7 +106,7 @@ jobs:
         ports:
           - "9200:9200"
       meilisearch:
-        image: getmeili/meilisearch:v${{ matrix.meilisearch-version }}
+        image: getmeili/meilisearch:${{ matrix.meilisearch-version }}
         env:
           MEILI_ENV: development # disable auth
         ports:
@@ -162,7 +162,7 @@ jobs:
       fail-fast: false
       matrix:
         mysql-version: ["8.0", 8.2, 8.3, latest]
-        elasticsearch-version: [7.5.0, 7.17.20, 8.13.0, latest]
+        elasticsearch-version: [7.5.0, 7.17.20, 8.13.0]
     services:
       mysql:
         image: mysql:${{ matrix.mysql-version }}
