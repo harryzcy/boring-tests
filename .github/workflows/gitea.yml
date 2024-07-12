@@ -162,7 +162,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mysql-version: ["8.0", 8.2, 8.3, latest]
+        mysql-version: ["8.0", 8.2, 8.3, 8.4, 9.0, latest]
         elasticsearch-version: [7.5.0, 7.17.20, 8.13.0]
     services:
       mysql:
