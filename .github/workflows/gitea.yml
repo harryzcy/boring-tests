@@ -130,6 +130,10 @@ jobs:
           MINIO_ROOT_PASSWORD: 12345678
         ports:
           - "9000:9000"
+      devstoreaccount1.azurite.local: # https://github.com/Azure/Azurite/issues/1583
+        image: mcr.microsoft.com/azure-storage/azurite:latest
+        ports:
+          - 10000:10000
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
