@@ -131,7 +131,7 @@ jobs:
         ports:
           - "9000:9000"
       devstoreaccount1.azurite.local: # https://github.com/Azure/Azurite/issues/1583
-        image: mcr.microsoft.com/azure-storage/azurite:latest@sha256:2628ee10a72833cc344b9d194cd8b245543892b307d16cf26a2cf55a15b816af
+        image: mcr.microsoft.com/azure-storage/azurite:latest@sha256:0a47e12e3693483cef5c71f35468b91d751611f172d2f97414e9c69113b106d9
         ports:
           - 10000:10000
     steps:
@@ -229,7 +229,7 @@ jobs:
         ports:
           - "1433:1433"
       devstoreaccount1.azurite.local: # https://github.com/Azure/Azurite/issues/1583
-        image: mcr.microsoft.com/azure-storage/azurite:latest@sha256:2628ee10a72833cc344b9d194cd8b245543892b307d16cf26a2cf55a15b816af
+        image: mcr.microsoft.com/azure-storage/azurite:latest@sha256:0a47e12e3693483cef5c71f35468b91d751611f172d2f97414e9c69113b106d9
         ports:
           - 10000:10000
     steps:
