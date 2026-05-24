@@ -96,7 +96,7 @@ jobs:
       matrix:
         elasticsearch-version: [7.5.0, 7.17.20, 8.13.0]
         meilisearch-version: [v1.7.6, latest]
-        minio-version: [2021.3.17, 2024.4.18, latest]
+        minio-version: [2025.7.23, latest]
         redis-version: [7.2.4, latest]
     services:
       elasticsearch:
