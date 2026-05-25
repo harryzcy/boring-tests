@@ -53,9 +53,9 @@ jobs:
         env:
           TAGS: bindata
       - name: run migration tests
-        run: make test-pgsql-migration
+        run: GITEA_TEST_DATABASE=pgsql make test-migration
       - name: run tests
-        run: make test-pgsql
+        run: GITEA_TEST_DATABASE=pgsql make test-integration
         timeout-minutes: 50
         env:
           TAGS: bindata gogit
@@ -79,9 +79,9 @@ jobs:
         env:
           TAGS: bindata gogit sqlite sqlite_unlock_notify
       - name: run migration tests
-        run: make test-sqlite-migration
+        run: GITEA_TEST_DATABASE=sqlite make test-migration
       - name: run tests
-        run: make test-sqlite
+        run: GITEA_TEST_DATABASE=sqlite make test-integration
         timeout-minutes: 50
         env:
           TAGS: bindata gogit sqlite sqlite_unlock_notify
@@ -204,9 +204,9 @@ jobs:
         env:
           TAGS: bindata
       - name: run migration tests
-        run: make test-mysql-migration
+        run: GITEA_TEST_DATABASE=mysql make test-migration
       - name: run tests
-        run: make integration-test-coverage
+        run: GITEA_TEST_DATABASE=mysql make test-integration
         env:
           TAGS: bindata
           RACE_ENABLED: true
@@ -246,9 +246,9 @@ jobs:
       - run: make backend
         env:
           TAGS: bindata
-      - run: make test-mssql-migration
+      - run: GITEA_TEST_DATABASE=mssql make test-migration
       - name: run tests
-        run: make test-mssql
+        run: GITEA_TEST_DATABASE=mssql make test-integration
         timeout-minutes: 50
         env:
           TAGS: bindata
