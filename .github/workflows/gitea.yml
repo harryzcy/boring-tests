@@ -14,8 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pgsql-version: [12, 13, 14, 15, 16, 17beta2, latest]
-        minio-version: [2023.8.31, 2024.4.18, latest]
+        pgsql-version: [14, 15, 16, 17, 18, latest]
+        minio-version: [2025.7.23, latest]
     services:
       pgsql:
         image: postgres:${{ matrix.pgsql-version }}
@@ -32,7 +32,7 @@ jobs:
       minio:
         # as github actions doesn't support "entrypoint", we need to use a non-official image
         # that has a custom entrypoint set to "minio server /data"
-        image: bitnami/minio:${{ matrix.minio-version }}
+        image: bitnamilegacy/minio:${{ matrix.minio-version }}
         env:
           MINIO_ROOT_USER: 123456
           MINIO_ROOT_PASSWORD: 12345678
@@ -166,8 +166,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mysql-version: ["8.0", 8.2, 8.3, 8.4, 9.0, latest]
-        elasticsearch-version: [7.5.0, 7.17.20, 8.13.0]
+        mysql-version: [8.4, 9.7, latest]
+        elasticsearch-version: [8.19, 9.2, 9.3]
     services:
       mysql:
         image: mysql:${{ matrix.mysql-version }}
@@ -218,7 +218,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mssql-version: [2017, 2019, 2022]
+        mssql-version: [2017, 2019, 2022, 2025]
     services:
       mssql:
         image: mcr.microsoft.com/mssql/server:${{ matrix.mssql-version }}-latest
