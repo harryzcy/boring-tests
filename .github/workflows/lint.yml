@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   super-linter:
-    uses: harryzcy/github-actions/.github/workflows/linter.yml@30df3c6587f94bcd4f39ef54a085a1cad082780a # main
+    uses: harryzcy/github-actions/.github/workflows/linter.yml@cd0ab1bd38632dd69d84cf32ea1b25fb2480a482 # main
 
   spelling:
-    uses: harryzcy/github-actions/.github/workflows/spelling.yml@30df3c6587f94bcd4f39ef54a085a1cad082780a # main
+    uses: harryzcy/github-actions/.github/workflows/spelling.yml@cd0ab1bd38632dd69d84cf32ea1b25fb2480a482 # main
