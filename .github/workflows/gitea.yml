@@ -104,6 +104,9 @@ jobs:
         env:
           discovery.type: single-node
           xpack.security.enabled: "false" # enabled by default in 8.x
+          xpack.ml.enabled: false
+          ingest.geoip.downloader.enabled: false
+          ES_JAVA_OPTS: "-Xms1g -Xmx1g"
         ports:
           - "9200:9200"
       meilisearch:
