@@ -259,4 +259,4 @@ jobs:
         timeout-minutes: 50
         env:
           TAGS: bindata
-          USE_REPO_TEST_DIR: 1
+          TEST_INDEXER_CODE_ES_URL: "http://elastic:changeme@elasticsearch:9200"
