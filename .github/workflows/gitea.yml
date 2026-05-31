@@ -225,7 +225,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mssql-version: [2017, 2019, 2022, 2025]
+        mssql-version: [2019, 2022, 2025]
     services:
       mssql:
         image: mcr.microsoft.com/mssql/server:${{ matrix.mssql-version }}-latest
